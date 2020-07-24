@@ -1,0 +1,379 @@
+@charset "utf-8";
+//                                      定数定義
+$white: #ffffff;
+$black: #000000;
+
+@mixin border-s($b-thick, $b-color, $b-radius) {
+  border: $b-thick solid $b-color;
+  border-radius: $b-radius;
+  box-sizing: border-box;
+}
+
+
+//                                      共通定義及びスマホ
+html {
+  font-size: 62.5%;                     //  基準値：10px
+}
+body {
+  min-width: 32.0rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1.00;
+  font-family: "Roboto", sans-serif;
+}
+
+#side-menu {
+  // display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+//                                      Menu
+@mixin mul-defi {
+  margin-left: 20.12%;
+  font-family: "mplus-1m-bold";
+  font-size: 2.4rem;
+
+  a {
+    color: #707070;
+  }
+}
+
+@mixin mli-defi {
+  margin-top: 2.3rem;
+  margin-left: 6.10%;
+  font-family: "mplus-1m-regular";
+  font-size: 2.0rem;
+
+  &:first-child {
+    margin-top: 3.7rem;
+  }
+
+  a {
+    color: #707070;
+  }
+}
+
+.menu {
+  // position: relative;        なくてもいい
+  // position: absolute;        なくてもいい
+  width: 87.47%;
+  height: 182.6rem;
+  background-color: #F2EDE9;
+
+  &-closew {
+
+    &__p {
+      font-size: 3.2rem;
+      font-weight: bold;
+      margin: 2.5rem 5.18% 0 auto;
+      text-align: right;
+    }
+
+  }
+
+  &-burger {
+    margin-top: 15.5rem;
+    @include mul-defi;
+
+    &__name {
+      @include mli-defi;
+    }
+  }
+
+  &-side {
+    margin-top: 4.4rem;
+    @include mul-defi;
+
+    &__name {
+      @include mli-defi;
+    }
+  }
+
+  &-drink {
+    margin-top: 4.2rem;
+    @include mul-defi;
+
+    &__name {
+      @include mli-defi;
+    }
+  }
+}
+
+//
+// .main {
+// }
+//                                      .header
+.header {
+  background-color: #FFF7EF;
+  display: grid;
+  grid-template: "h01" 21.7rem
+                 "h02" 28.5rem
+                 /100%;
+
+  &-h01 {
+    grid-area: h01;
+
+    &__menu {
+
+      &-p {
+        font-size: 2.0rem;
+        font-weight: bold;
+        color: #707070;
+        margin: 1.4rem 4.26% 0 auto;
+        text-align: right;
+      }
+    }
+
+    &__ttext {
+
+      &-p {
+        font-size: 4.0rem;
+        font-weight: bold;
+        color: #707070;
+        line-height: 1.35;
+        margin-top: 0.6rem;
+        text-align: center;
+      }
+    }
+
+    &__forms {
+      margin-top: 3.8rem;
+      margin-left: 6.4%;
+      margin-right: 8.27%;
+      display: flex;
+      justify-content: space-between;
+
+      &-text {
+        width: 71.87%;
+        height: 4.6rem;
+        background-color: $white;
+        padding-left: 6.96%;
+        font-family: FontAwesome;
+        font-size: 2.4rem;
+        color: #808080;
+        @include border-s(1px, #707070, 10px);
+      }
+
+      &-button {
+        width: 24.38%;
+        height: 4.6rem;
+        font-family: "mplus-1m-bold";
+        font-size: 1.6rem;
+        @include border-s(1px, #707070, 10px);
+        background: linear-gradient(to bottom, #F2EDE9, #DED8D3);
+      }
+    }
+  }
+
+  &-h02 {
+    grid-area: h02;
+    background: url(../img/3ba5a44414bb3c0885c27ff614596431.png) 0 0 no-repeat;
+    background-size: cover;
+    padding-left: 5.9%;
+    display: flex;
+    align-items: center;
+
+    &__stext {
+      font-family: "mplus-1m-bold";
+      font-size: 3.6rem;
+      color: $white
+    }
+  }
+}
+//                                      .content
+.content {
+  background-color: $white;
+  display: grid;
+  grid-template: "..... ... ....."  2.0rem
+                 "..... c01 ....." 64.2rem
+                 "..... ... ....."  2.0rem
+                 "..... c02 ....." 64.2rem
+                 "..... ... ....."  6.0rem
+                 /5.33% 1fr 5.33%;
+
+  &-c01 {
+    grid-area: c01;
+    background: url(../img/three-burgers-on-brown-wooden-tray-between-white-ceramic-1841108.png) 0 0 no-repeat;
+  }
+
+  &-c02 {
+    grid-area: c02;
+    background: url(../img/473d814b175bd517b56eb309f2958725.png) 0 0 no-repeat;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template: "..... .... ....."  1.1rem
+                   "..... c011 ....."  5.4rem
+                   "..... c012 ....."  4.3rem
+                   "..... .... ....."   1fr
+                   "..... c013 ....." 16.3rem
+                   "..... .... ....."  0.9rem
+                   "..... c014 ....." 16.3rem
+                   "..... .... ....."  1.0rem
+                   /3.28% 1fr  2.99%;
+
+    &__header {
+      grid-area: c011;
+      margin: auto 0;
+      font-size: 4.1rem;
+      font-weight: bold;
+      color: #EAEAEA
+    }
+
+    &__line {
+      grid-area: c012;
+      width: 12.65%;
+      height: 0.4rem;
+      margin: auto 0;
+      background-color: $white;
+        }
+
+    &__exp1 {
+      grid-area: c013;
+    }
+
+    &__exp2 {
+      grid-area: c014;
+    }
+
+    &__exp {
+      background-color: $white;
+      opacity: 0.8;
+      color: #3C2A10;
+      font-weight: 500;
+
+      &-title {
+        margin-top: 1.9rem;
+        margin-left: 3.18%;
+        font-family: "mplus-1m-bold";
+        font-size: 2.2rem;
+        line-height: 1.36;
+      }
+
+      &-text {
+        margin-top: 2rem;
+        margin-left: 3.18%;
+        width: 92.36%;
+        height: 7.1rem;
+        font-family: "mplus-1m-regular";
+        font-size: 1.6rem;
+        line-height: 1.48;
+        overflow: hidden;
+      }
+    }
+  }
+}
+//                                      .contact
+.contact {
+  width: 100%;
+  height: 69.1rem;
+  background: url(../img/スクリーンショット20200210114742.png) 0 0 no-repeat;
+  background-size: cover;
+  color: $white;
+  z-index: 0001;
+  display: grid;
+  grid-template: "...... ... ......" 4.0rem
+                 "...... t01 ......" 4.0rem
+                 "...... t02 ......" 4.2rem
+                 "...... t03 ......"   1fr
+                 "...... ... ......" 5.1rem
+                 /10.67% 1fr 10.67%;
+
+  &-layer {
+    background-color: $black;
+    opacity: 0.6;
+    z-index: 0010;
+  }
+
+  &-header {
+    grid-area: t01;
+    margin: auto 0.68%;
+    font-family: "mplus-1m-bold";
+    font-size: 3.0rem;
+  }
+
+  &-line {
+    grid-area: t02;
+    width: 25.42%;
+    height: 0.2rem;
+    margin: auto 0.68%;
+    background-color: $white;
+  }
+
+  &-text {
+    grid-area: t03;
+    font-family: "mplus-1m-bold";
+    font-size: 1.4rem;
+    line-height: 2.0;
+    overflow: hidden;
+  }
+}
+
+//                                      .footer
+.footer {
+  background-color: #9D8670;
+  padding-top: 3.9rem;
+  padding-bottom: 3.0rem;
+
+  &-info {
+    padding-left: 16.8%;
+
+    a,p {
+      display: inline;
+      font-family: "mplus-1m-regular";
+      font-size: 2.0rem;
+      color: $white;
+    }
+  }
+
+  &-copyright {
+    padding-top: 3.5rem;
+    font-family: "mplus-1m-regular";
+    font-size: 1.4rem;
+    color: $white;
+    text-align: center;
+  }
+}
+
+
+#side-menu {
+  display: none;
+}
+
+#menu-close {
+  display: none;
+  position: fixed;
+  z-index: 0999;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.menu {
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  height: 182.6rem;
+  transition: 0.3s ease-in-out;
+  transform: translateX(105%);
+}
+
+#side-menu:checked ~ #menu-close {
+  display: block;
+  opacity: 0.6;
+}
+
+#side-menu:checked ~ .menu {
+  transform: translateX(0%);
+}
